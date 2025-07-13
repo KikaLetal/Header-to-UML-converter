@@ -1,3 +1,8 @@
+from pathlib import Path
+import os
+BASE_DIR = Path(__file__).parent
+os.chdir(Path(__file__).parent)
+
 IsExit = False
 
 def join_type(words):
@@ -26,7 +31,8 @@ def clean_default_value(tokens):
     return " ".join(res.split())
 
 while(not IsExit):
-    Hname = input("type your filename: ")
+    Hname = input("type your filename: ").strip()
+    header_path = BASE_DIR / f"{Hname}.h"
     Hwords = []
     FileCursor = ""
     StartedClass = False
@@ -88,9 +94,6 @@ while(not IsExit):
         idx = Hwords.index("class")
         if idx + 1 < len(Hwords):
             ClassName = Hwords[idx + 1]
-
-    for word in Hwords:
-        print(word)
 
     IsPrivateSection, ISPublicSection = False, False
     i = 0
