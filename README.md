@@ -10,5 +10,7 @@
 3. run ```main.py```
 > ⚠ Make sure the your headers in the same same directory as the ```.py```
 
+> ⚠ you need Python
+
 ## 📜 License ##
 None. Feel free to use
